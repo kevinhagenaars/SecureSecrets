@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "secure-secrets-for-azure-key-vault",
   "publisher": "KevinHagenaars",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "Secure Secrets",
   "description": "Create Azure Key Vault secrets and put them directly in your Azure Key Vault.",
   "public": false,

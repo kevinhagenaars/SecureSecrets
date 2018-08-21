@@ -24,7 +24,13 @@ export class KeyVault {
                 secretValue = randomize(pattern,secretLength);
             }
 
-            this.keyVaultClient.setSecret(this.taskParameters.keyVaultUrl,secretName,secretValue);
+            this.keyVaultClient.setSecret(this.taskParameters.keyVaultUrl,secretName,secretValue)    
+            .then( (kvSecretBundle) => {
+                console.log("Secret id: '" + kvSecretBundle.id + "'.");
+            })
+            .catch( (e) => {
+                tl.setResult(tl.TaskResult.Failed,"Failed to save key to the Key Vault. => " + e);
+            });
         }
         catch(e){
             tl.setResult(tl.TaskResult.Failed,"Failed to save key to the Key Vault. => " + e);

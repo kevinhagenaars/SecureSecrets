@@ -43,7 +43,7 @@
         "ms.vss-distributed-task.tasks"
       ],
       "properties": {
-        "name": "buildAndReleaseTask"
+        "name": "createSecret"
       }
     }
   ]

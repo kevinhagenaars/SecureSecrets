@@ -22,11 +22,6 @@
     "Generate",
     "Password"
   ],
-  "screenshots": [
-    {
-      "path": ""
-    }
-  ],
   "content": {
     "details": {
       "path": "docs/overview.md"

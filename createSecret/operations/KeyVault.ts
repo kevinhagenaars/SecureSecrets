@@ -5,8 +5,6 @@ import tl = require("vsts-task-lib/task");
 var randomize = require('randomatic');
 var AuthenticationContext = require('adal-node').AuthenticationContext;
 
-let client:azureKeyVault.KeyVaultClient;
-
 export class KeyVault {
 
     
@@ -26,7 +24,7 @@ export class KeyVault {
                 secretValue = randomize(pattern,secretLength);
             }
 
-            client.setSecret(this.taskParameters.keyVaultUrl,secretName,secretValue);
+            this.keyVaultClient.setSecret(this.taskParameters.keyVaultUrl,secretName,secretValue);
         }
         catch(e){
             tl.setResult(tl.TaskResult.Failed,"Failed to save key to the Key Vault. => " + e);

@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "azure-arm-keyvault": "^1.1.2",
     "azure-keyvault": "^3.0.4",
-    "fs-readfile-promise": "^3.0.1",
-    "ms-rest-azure": "1.2.0",
+    "ms-rest-azure": "^2.5.7",
     "randomatic": "^3.1.0",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/node": "^10.5.2",
     "@types/q": "^1.5.0",
-    "@types/request": "^2.47.1"
+    "@types/request": "^2.47.1",
+    "@types/azure": "^0.9.19"
   }
 }

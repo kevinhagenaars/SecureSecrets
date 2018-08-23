@@ -16,10 +16,8 @@ function run() {
         try {
             validateInput();
             let taskParameters = new keyVaultTaskParameters.KeyVaultTaskParameters();
-            console.log("task params are VVV");
-            console.log(taskParameters);
             let keyvault = new kv.KeyVault(taskParameters);
-            keyvault.createSecret(tl.getInput("SecretName"), tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"));
+            keyvault.createSecret(taskParameters.vaultCredentials, tl.getInput("SecretName"), tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"));
         }
         catch (error) {
             tl.setResult(tl.TaskResult.Failed, "Error occured -> " + error);

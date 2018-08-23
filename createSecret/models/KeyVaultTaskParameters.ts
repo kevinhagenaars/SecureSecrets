@@ -10,6 +10,8 @@ export class KeyVaultTaskParameters {
     public keyVaultUrl: string;
     public servicePrincipalId: string;
     public scheme: string;
+    public tenantId: string;
+    public servicePrincipalKey: string;
 
     constructor() {
         var connectedService = tl.getInput("ConnectedServiceName", true);
@@ -32,7 +34,11 @@ export class KeyVaultTaskParameters {
         var envAuthorityUrl: string = tl.getEndpointDataParameter(connectedService, 'environmentAuthorityUrl', true);
         envAuthorityUrl = (envAuthorityUrl != null) ? envAuthorityUrl : "https://login.windows.net/";
         var msiClientId = tl.getEndpointDataParameter(connectedService, 'msiclientId', true);
-        var credentials = new msRestAzure.ApplicationTokenCredentials(this.servicePrincipalId, tenantId, servicePrincipalKey, vaultUrl, envAuthorityUrl, vaultUrl, false, this.scheme , msiClientId);
+
+        this.tenantId = tenantId;
+        this.servicePrincipalKey = servicePrincipalKey;
+
+        var credentials = new msRestAzure.ApplicationTokenCredentials(this.servicePrincipalId, tenantId, servicePrincipalKey);
         return credentials;
     }
 }

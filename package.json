@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs-readfile-promise": "^3.0.1",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
     "vss-web-extension-sdk": "^5.134.0",

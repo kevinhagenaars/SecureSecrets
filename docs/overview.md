@@ -5,11 +5,11 @@ You can also add your own secret values into the selected Key Vault.
 
 # Important
 When using custom values, do this by using the VSTS secured varibles and do not paste plain text in the input field!
+Also make sure the Service Principal has access to the Key Vault.
 
 # Prerequisites
 - Azure subscription
 - Visual Studio Team Services (VSTS)
-
 
 # Used npm packages
 - randomatic

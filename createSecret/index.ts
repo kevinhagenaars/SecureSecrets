@@ -10,7 +10,7 @@ async function run() {
         let taskParameters = new keyVaultTaskParameters.KeyVaultTaskParameters();
         let keyvault = new kv.KeyVault(taskParameters);
 
-        keyvault.createSecret(taskParameters.vaultCredentials,tl.getInput("SecretName"),tl.getInput("SecretValue"),parseInt(tl.getInput("SecretLength")),tl.getBoolInput("ExcludeSpecialChars"));
+        await keyvault.createSecret(taskParameters.vaultCredentials,tl.getInput("SecretName"),tl.getInput("SecretValue"),parseInt(tl.getInput("SecretLength")),tl.getBoolInput("ExcludeSpecialChars"),tl.getBoolInput("KeepValue"));
     } 
     catch (error) {
         tl.setResult(tl.TaskResult.Failed, "Error occured -> "+error);

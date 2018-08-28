@@ -61,6 +61,14 @@
 
         },
         {
+            "name": "KeepValue",
+            "type": "boolean",
+            "label": "Keep previous secret value when exists?",
+            "defaultValue": false,
+            "required": false,
+            "helpMarkDown": "When enabled, the previous generated value will be kept. If this is the initial run it will generate a new secret value. Only applies when the custom value is empty."
+        },
+        {
             "name": "SecretLength",
             "type": "string",
             "label": "Length of the generated secret",

@@ -1,0 +1,58 @@
+{
+  "manifestVersion": 1,
+  "id": "secure-secrets-for-azure-key-vault",
+  "publisher": "KevinHagenaars",
+  "version": "1.0.0",
+  "name": "Secure Secrets",
+  "description": "Create or generate Azure Key Vault secrets and put them directly in your Azure Key Vault.",
+  "public": true,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": [
+    "Build and release"
+  ],
+  "tags": [
+    "Key Vault",
+    "Vault",
+    "Azure",
+    "Secrets",
+    "Generate",
+    "Password"
+  ],
+  "screenshots": [
+    {
+      "path": "images/Screenshot_1.png"
+    },
+    {
+      "path": "images/Screenshot_2.png"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "docs/overview.md"
+    }
+  },
+  "icons": {
+    "default": "images/icon.png"
+  },
+  "files": [
+    {
+      "path": "createSecret"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "custom-build-release-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "createSecret"
+      }
+    }
+  ]
+}

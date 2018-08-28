@@ -1,0 +1,32 @@
+{
+  "name": "parametertemplateforarm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://khagenaa.visualstudio.com/DemoFlow/_git/ParameterTemplateForArm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "azure-arm-keyvault": "^1.1.2",
+    "azure-keyvault": "^3.0.4",
+    "ms-rest-azure": "^2.5.7",
+    "randomatic": "^3.1.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5",
+    "vss-web-extension-sdk": "^5.134.0",
+    "vsts-task-lib": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.2",
+    "@types/q": "^1.5.0",
+    "@types/request": "^2.47.1",
+    "@types/azure": "^0.9.19"
+  }
+}

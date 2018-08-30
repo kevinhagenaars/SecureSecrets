@@ -46,10 +46,10 @@
         {
             "name": "SecretName",
             "type": "string",
-            "label": "Name of the secret",
+            "label": "Name of the secrets",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "The name of the secret that will be stored in the Key Vault."
+            "helpMarkDown": "Comma separated list of names of secrets that will be stored in the Key Vault."
         },
         {
             "name": "SecretValue",

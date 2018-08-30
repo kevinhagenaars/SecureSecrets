@@ -5,12 +5,12 @@ import keyVaultTaskParameters = require("./models/KeyVaultTaskParameters");
 
 async function run() {
     try {
-        
         validateInput();
         let taskParameters = new keyVaultTaskParameters.KeyVaultTaskParameters();
         let keyvault = new kv.KeyVault(taskParameters);
-
-        await keyvault.createSecret(taskParameters.vaultCredentials,tl.getInput("SecretName"),tl.getInput("SecretValue"),parseInt(tl.getInput("SecretLength")),tl.getBoolInput("ExcludeSpecialChars"),tl.getBoolInput("KeepValue"));
+        for (let sName of tl.getInput("SecretName").split(',')) {
+            await keyvault.createSecret(taskParameters.vaultCredentials, sName, tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"), tl.getBoolInput("KeepValue"));
+        }        
     } 
     catch (error) {
         tl.setResult(tl.TaskResult.Failed, "Error occured -> "+error);

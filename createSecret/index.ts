@@ -9,7 +9,7 @@ async function run() {
         let taskParameters = new keyVaultTaskParameters.KeyVaultTaskParameters();
         let keyvault = new kv.KeyVault(taskParameters);
         for (let sName of tl.getInput("SecretName").split(',')) {
-            await keyvault.createSecret(taskParameters.vaultCredentials, sName, tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"), tl.getBoolInput("KeepValue"));
+            await keyvault.createSecret(taskParameters.vaultCredentials, sName.trim(), tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"), tl.getBoolInput("KeepValue"));
         }        
     } 
     catch (error) {

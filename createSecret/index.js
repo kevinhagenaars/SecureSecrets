@@ -18,7 +18,7 @@ function run() {
             let taskParameters = new keyVaultTaskParameters.KeyVaultTaskParameters();
             let keyvault = new kv.KeyVault(taskParameters);
             for (let sName of tl.getInput("SecretName").split(',')) {
-                yield keyvault.createSecret(taskParameters.vaultCredentials, sName, tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"), tl.getBoolInput("KeepValue"));
+                yield keyvault.createSecret(taskParameters.vaultCredentials, sName.trim(), tl.getInput("SecretValue"), parseInt(tl.getInput("SecretLength")), tl.getBoolInput("ExcludeSpecialChars"), tl.getBoolInput("KeepValue"));
             }
         }
         catch (error) {

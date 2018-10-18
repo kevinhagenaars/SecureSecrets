@@ -1,4 +1,4 @@
-# Secure secrets for Azure Key Vault
+# Secure secrets for Azure DevOps
 
 This extension let's you generate strong secrets within your CI/CD pipeline and insert them directly in your Azure Key Vault.
 You can also add your own secret values into the selected Key Vault.
